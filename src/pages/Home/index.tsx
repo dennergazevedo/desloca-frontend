@@ -1,10 +1,15 @@
 import React from 'react';
-import { FaCar } from 'react-icons/fa';
-import { Container, Body, Title, ListContainer } from './styles';
-
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import CarItem from '../../components/CarItem';
+
+import { FaCar } from 'react-icons/fa';
+import { 
+  Container, 
+  Body, 
+  Title, 
+  ListContainer 
+} from './styles';
 
 const Home: React.FC = () => {
   return (
