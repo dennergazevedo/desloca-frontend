@@ -4,7 +4,8 @@
       "node"
     ],
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "./**/*"
     ],
     "target": "es2017",
     "module": "esnext",
@@ -41,8 +42,10 @@
     "enable": false
   },
   "include": [
-    "./**/*.ts",
-    "./typings/*.d.ts"
+    "./typings/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.d.ts",
+    "./**/*.ts"
   ],
   "exclude": [
     "node_modules"
