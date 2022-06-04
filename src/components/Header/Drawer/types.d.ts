@@ -1,0 +1,3 @@
+interface MenuItem{
+  bottom?: boolean
+}

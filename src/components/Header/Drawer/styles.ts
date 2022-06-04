@@ -19,13 +19,13 @@ export const Button = styled.button`
   outline: 0;
 `
 
-export const MenuItem = styled.div`
+export const MenuItem = styled.div<MenuItem>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: 16px 32px;
-  border-bottom: 1px solid #3331;
+  border-bottom: ${props => props.bottom? 'none' : '1px solid #3331'};
   width: 250px;
 
   .drawerIcon{
@@ -37,6 +37,16 @@ export const MenuItem = styled.div`
     text-decoration: none;
     color: #333;
   }
+`;
+
+export const DrawerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 32px;
 `;
 
 export const Title = styled.div`

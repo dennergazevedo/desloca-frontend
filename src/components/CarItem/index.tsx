@@ -8,9 +8,9 @@ import {
 /* TEMP */
 import hb20 from '../../assets/hb20.jpg';
 
-const CarItem: React.FC = () => {
+const CarItem: React.FC<ICarItem> = ({ toggle }: ICarItem) => {
   return (
-    <Container>
+    <Container onClick={toggle}>
       <ImageContainer>
         <img src={hb20} alt="Carro" />
       </ImageContainer>

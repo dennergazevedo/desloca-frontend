@@ -7,6 +7,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from '../pages/Register';
 import Contato from "../pages/Contato";
+import ClientRent from '../pages/ClientRent';
 import NotFound from "../pages/NotFound";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/login" element={<Login/>} />
             <Route path="/cadastro" element={<Register/>} />
             <Route path="/contato" element={<Contato/>} />
+            <Route path="/alugar" element={<ClientRent/>} />
             <Route path="*" element={<NotFound />}/>
         </Routes>
     </BrowserRouter>
