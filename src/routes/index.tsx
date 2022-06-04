@@ -4,6 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css'; 
 
 import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Register from '../pages/Register';
 import Contato from "../pages/Contato";
 import NotFound from "../pages/NotFound";
 
@@ -14,6 +16,8 @@ const App = () => {
         <GlobalStyles />
         <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/cadastro" element={<Register/>} />
             <Route path="/contato" element={<Contato/>} />
             <Route path="*" element={<NotFound />}/>
         </Routes>

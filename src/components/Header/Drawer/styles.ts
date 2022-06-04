@@ -38,3 +38,24 @@ export const MenuItem = styled.div`
     color: #333;
   }
 `;
+
+export const Title = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+
+  .title{
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .closeButton{
+    background: transparent;
+    cursor: pointer;
+  }
+`;

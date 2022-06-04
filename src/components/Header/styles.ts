@@ -13,6 +13,7 @@ export const Container = styled.footer`
   text-transform: uppercase;
   font-variant: small-caps;
   background-image: linear-gradient(#045007,#00aa2b);
+  z-index: 1;
 
   .headerLinkLogo{
     display: flex;

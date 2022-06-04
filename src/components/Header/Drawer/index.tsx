@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Drawer from '@mui/material/Drawer';
+import { GrFormClose } from 'react-icons/gr';
 import { 
   BiMenu, 
   BiHomeAlt, 
@@ -8,8 +10,12 @@ import {
   BiLockOpenAlt
 } from 'react-icons/bi';
 
-import Drawer from '@mui/material/Drawer';
-import { Container, Button, MenuItem } from './styles';
+import { 
+  Container, 
+  Button, 
+  MenuItem,
+  Title 
+} from './styles';
 
 const MenuDrawer: React.FC = () => {
 
@@ -27,6 +33,15 @@ const MenuDrawer: React.FC = () => {
         open={isOpen}
         onClose={toggle}
       >
+        <Title>
+          <p className="title">Menu</p>
+          <button 
+            className="closeButton"
+            onClick={toggle}
+          >
+            <GrFormClose size={24} color={"#333"} />
+          </button>
+        </Title>
         <Link to="/">
           <MenuItem>
             <BiHomeAlt className="drawerIcon" size={20} color={"#333"} />
