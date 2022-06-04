@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import RentModal from '../../components/RentModal';
@@ -31,18 +33,20 @@ const Home: React.FC = () => {
             <RentModal />
             <RentModal />
           </ListContainer>
-          <Alugue>
-            <p className="title">
-              Alugue de 
-              <br />
-              <FaLaptopHouse size={60} color={"#FFF"} />
-            </p>
-            <img 
-              className="rentBanner" 
-              src={banner} 
-              alt="AlugueEmCasa" 
-            />
-          </Alugue>
+          <Link to="/alugar">
+            <Alugue>
+              <p className="title">
+                Alugue de 
+                <br />
+                <FaLaptopHouse size={60} color={"#FFF"} />
+              </p>
+              <img 
+                className="rentBanner" 
+                src={banner} 
+                alt="AlugueEmCasa" 
+              />
+            </Alugue>
+          </Link>
         </React.Fragment>
       </Body>
       <Footer />

@@ -24,11 +24,35 @@ export const Body = styled.section`
 export const Title = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   padding: 8px 24px;
   background-image: linear-gradient(#045007,#00aa2b);
+
+  .titleItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+
+    .input{
+      border-bottom: 1px solid #fff3;
+      border-left: 1px solid #fff3;
+      border-radius: 4px;
+      width: 100%;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: #FFF;
+      background: transparent;
+
+      &::placeholder{
+        color: #FFF;
+      }
+    }
+  }
 
   .titleIcon{
     margin-right: 8px;
@@ -38,6 +62,14 @@ export const Title = styled.div`
     font-size: 20px;
     color: #fff;
     cursor: default;
+  }
+
+  @media (min-width: 600px){
+    justify-content: space-between;
+
+    .titleItem{
+      margin-top: 0px;
+    }
   }
 `;
 
@@ -64,44 +96,5 @@ export const ListContainer = styled.div`
 
   .paymentDescription{
     font-size: 14px;
-  }
-`;
-
-export const Alugue = styled.section`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 200px;
-  margin-top: 32px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-
-  .title{
-    position: absolute;
-    right: 64px;
-    top: calc(50% - 60px);
-    color: #fff;
-    font-size: 48px;
-    text-transform: lowercase;
-    font-variant: small-caps;
-    text-align: center;
-    line-height: 48px;
-    font-weight: bold;
-    text-shadow: 0 0 2px #333, 5px 5px 5px #3335;
-  }
-
-  .rentBanner{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  @media (min-width: 600px){
-    .rentBanner{
-      margin-top: -300px;
-    }
   }
 `;
