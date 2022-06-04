@@ -4,19 +4,21 @@ export const Container = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  min-height: 100vh;
 `;
 
 export const Body = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   width: 80vw;
   min-width: 250px;
   margin: 16px 0px;
+  min-height: 70vh;
 `;
 
 export const Title = styled.div`
@@ -47,7 +49,7 @@ export const ListContainer = styled.div`
   flex-wrap: wrap;
   margin: 16px 0px;
   width: 100%;
-  height: 100%;
+  height: auto;
 
   .paymentItem{
     display: flex;

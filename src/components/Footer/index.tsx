@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="paymentItem">
               <BsFillCreditCard2FrontFill className="paymentIcon" size={20} color={"#FFF"}/>
-              <p className="paymentDescription">Cartão de crédito e débito</p>
+              <p className="paymentDescription">Cartões</p>
             </div>
 
             <div className="paymentItem">

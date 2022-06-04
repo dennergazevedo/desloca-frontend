@@ -2,17 +2,14 @@ import styled from 'styled-components'
 
 export const Container = styled.footer`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100vw;
   height: auto;
   color: #fff;
   font-size: 12px;
-  padding: 16px 64px;
+  padding: 16px;
   text-transform: uppercase;
   font-variant: small-caps;
   background-image: linear-gradient(#045007,#00aa2b);
@@ -22,6 +19,7 @@ export const Container = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 12px;
 
     .paymentTitle{
       display: flex;
@@ -39,6 +37,16 @@ export const Container = styled.footer`
     }
   }
 
+  @media (min-width: 600px){
+    flex-direction: row;
+    padding: 16px 64px;
+
+    .itemContainer{
+      margin-top: 0px;
+    }
+  }
+
+
   strong{
     font-size: 10px;
   }
@@ -50,7 +58,7 @@ export const ListContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: 4px;
   width: 100%;
   height: 100%;
 
@@ -59,7 +67,7 @@ export const ListContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0px 8px;
+    margin: 8px;
     border: 1px solid #fff3;
     padding: 4px 8px;
     border-radius: 4px;
@@ -67,6 +75,22 @@ export const ListContainer = styled.div`
 
     .paymentIcon{
       margin-right: 8px;
+    }
+
+    .paymentDescription{
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 600px){
+    margin-top: 16px;
+
+    .paymentItem{
+      margin: 0px 8px;
+    }
+
+    .paymentDescription{
+      font-size: 12px;
     }
   }
 `;
