@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import { GrFormClose } from 'react-icons/gr';
 import { FaCar } from 'react-icons/fa';
+import { IoSettingsOutline } from 'react-icons/io5';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { 
   BiMenu, 
   BiHomeAlt, 
@@ -52,10 +54,24 @@ const MenuDrawer: React.FC = () => {
               </MenuItem>
             </Link>
 
-            <Link to="/">
-              <MenuItem bottom={true}>
+            <Link to="/alugar">
+              <MenuItem>
                 <FaCar className="drawerIcon" size={20} color={"#333"} />
                 <p className="drawerLabel">Alugar</p>
+              </MenuItem>
+            </Link>
+
+            <Link to="/gerenciar-veiculos">
+              <MenuItem>
+                <IoSettingsOutline className="drawerIcon" size={20} color={"#333"} />
+                <p className="drawerLabel">Gerenciar Carros</p>
+              </MenuItem>
+            </Link>
+
+            <Link to="/cadastrar-veiculos">
+              <MenuItem bottom={true}>
+                <AiOutlinePlusCircle className="drawerIcon" size={20} color={"#333"} />
+                <p className="drawerLabel">Cadastrar Carro</p>
               </MenuItem>
             </Link>
           </div>
