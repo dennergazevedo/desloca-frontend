@@ -26,7 +26,7 @@ const AdminRent: React.FC = () => {
           <hr className="divider" />
           <input 
             className="input"
-            placeholder="Email do cliente"
+            placeholder="CNH do cliente"
           />
           <InputMask 
             className="input"
