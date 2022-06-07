@@ -15,7 +15,7 @@ const AdminRent: React.FC = () => {
 
   return (
     <>
-      <CarItem toggle={toggle} />
+      <CarItem toggle={toggle} car={{} as ICar}/>
       <Modal
         open={isOpen}
         onClose={toggle}

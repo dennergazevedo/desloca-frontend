@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { toast as alert } from 'react-toastify';
 import { 
   Container, 
   ImageContainer, 
   DescriptionContainer 
 } from './styles';
 
-/* TEMP */
-import hb20 from '../../assets/hb20.jpg';
+const CarItem: React.FC<ICarItem> = ({ toggle, car }: ICarItem) => {
 
-const CarItem: React.FC<ICarItem> = ({ toggle }: ICarItem) => {
+  const handleIndisponivel = useCallback(() => {
+    alert.error('Este carro está indisponível!');
+  }, [])
+
   return (
-    <Container onClick={toggle}>
+    <Container onClick={car.status === 'INDISPONIVEL'? handleIndisponivel : toggle} status={car.status}>
       <ImageContainer>
-        <img src={hb20} alt="Carro" />
+        <img src={car.image} alt={car.modelo} />
       </ImageContainer>
       <DescriptionContainer>
-        <h3 className="name">HB20</h3>
+        <h3 className="name">{car.modelo}</h3>
         <p className="description">
-          <strong>Fabricante:</strong> Hyundai
+          <strong>Fabricante:</strong> {car.marca}
         </p>
         <p className="description">
-          <strong>Ano:</strong> 2022
+          <strong>Ano:</strong> {car.ano}
         </p>
         <p className="description">
-          <strong>Cor:</strong> Preto
+          <strong>Cor:</strong> {car.cor}
         </p>
         <p className="description">
-          <strong>Motor:</strong> 1.6
+          <strong>Motor:</strong> {car.motor}
         </p>
       </DescriptionContainer>
     </Container>

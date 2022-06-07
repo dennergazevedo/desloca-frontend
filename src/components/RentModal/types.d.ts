@@ -1,0 +1,3 @@
+interface RentModalProps{
+  car: ICar
+}

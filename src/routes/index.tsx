@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import GlobalStyles from '../styles/global';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css'; 
+import { ContextProvider } from '../context';
 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -19,18 +20,20 @@ const App = () => {
     <BrowserRouter>
         <ToastContainer />
         <GlobalStyles />
-        <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/cadastro" element={<Register/>} />
-            <Route path="/contato" element={<Contato/>} />
-            <Route path="/alugar" element={<ClientRent/>} />
-            <Route path="/admin-aluguel" element={<AdminRent/>} />
-            <Route path="/gerenciar-veiculos" element={<ManageRent/>} />
-            <Route path="/meu-historico" element={<ClientHistory />} />
-            <Route path="/cadastrar-veiculos" element={<RegisterCar />} />
-            <Route path="*" element={<NotFound />}/>
-        </Routes>
+        <ContextProvider>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/cadastro" element={<Register/>} />
+                <Route path="/contato" element={<Contato/>} />
+                <Route path="/alugar" element={<ClientRent/>} />
+                <Route path="/admin-aluguel" element={<AdminRent/>} />
+                <Route path="/gerenciar-veiculos" element={<ManageRent/>} />
+                <Route path="/meu-historico" element={<ClientHistory />} />
+                <Route path="/cadastrar-veiculos" element={<RegisterCar />} />
+                <Route path="*" element={<NotFound />}/>
+            </Routes>
+        </ContextProvider>
     </BrowserRouter>
    )
 }

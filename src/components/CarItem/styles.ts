@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps{
+  status: string
+}
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,6 +16,7 @@ export const Container = styled.div`
   padding: 16px 0px;
   cursor: pointer;
   margin-bottom: 16px;
+  opacity: ${props => props.status === "INDISPONIVEL" || props.status === "RESERVADO"? 0.5 : 1};
 
   &:hover{
     border: 1px solid #3338;

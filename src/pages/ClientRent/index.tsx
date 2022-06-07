@@ -22,12 +22,7 @@ const ClientRent: React.FC = () => {
             <h1>Escolha o seu veículo</h1>
           </Title>
           <ListContainer>
-            <RentModal />
-            <RentModal />
-            <RentModal />
-            <RentModal />
-            <RentModal />
-            <RentModal />
+            <RentModal car={{} as ICar}/>
           </ListContainer>
         </React.Fragment>
       </Body>

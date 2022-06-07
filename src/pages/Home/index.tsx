@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../../context';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -16,6 +17,10 @@ import {
 } from './styles';
 
 const Home: React.FC = () => {
+  const { cars } = useContext(Context);
+  
+  useEffect(() => {console.log(cars)}, [cars])
+
   return (
     <Container>
       <Header />
@@ -26,12 +31,11 @@ const Home: React.FC = () => {
             <h1>Nossos Veículos</h1>
           </Title>
           <ListContainer>
-            <RentModal />
-            <RentModal />
-            <RentModal />
-            <RentModal />
-            <RentModal />
-            <RentModal />
+            {
+              cars.map(car => {
+                return <RentModal key={car.placa} car={car}/>
+              })
+            }
           </ListContainer>
           <Link to="/alugar">
             <Alugue>

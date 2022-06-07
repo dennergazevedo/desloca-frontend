@@ -4,12 +4,12 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   width: 320px;
-  height: 380px;
+  height: 400px;
   background-color: #FFF;
   border-radius: 8px;
   margin: auto;
   position: absolute;
-  top: calc(50% - 165px);
+  top: calc(50% - 200px);
   left: calc(50% - 160px);
   padding: 16px 32px;
 
@@ -65,6 +65,8 @@ export const Body = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    font-size: 14px;
     width: 100%;
     height: 40px;
     border-radius: 0px 8px 0px 8px;
@@ -73,7 +75,8 @@ export const Body = styled.div`
     cursor: default;
   }
 
-  .confirmRent{
+  .confirmRent,
+  .cancelRent {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,12 +93,25 @@ export const Body = styled.div`
       transition: 0.5s all;
       background-color: #045007;
     }
+    
+    &:disabled{
+      background-color: #aeaeae;
+    }
+  }
+
+  .cancelRent{
+    margin-top: 4px;
+    background: #E54;
+    &:hover{
+      transition: 0.5s all;
+      background-color: #ad0202;
+    }
   }
 
   @media (min-width: 600px){
     width: 400px;
-    height: 380px;
-    top: calc(50% - 165px);
+    height: 400px;
+    top: calc(50% - 200px);
     left: calc(50% - 200px);
   }
 `;
