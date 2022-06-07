@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../context';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import HistoryItem from '../../components/HistoryItem';
@@ -12,7 +13,9 @@ import {
   ListContainer 
 } from './styles';
 
-const CLientHistory: React.FC = () => {
+const ClientHistory: React.FC = () => {
+  const { cars, history } = useContext(Context);
+
   return (
     <Container>
       <Header />
@@ -23,12 +26,15 @@ const CLientHistory: React.FC = () => {
             <h1>Meu histórico</h1>
           </Title>
           <ListContainer>
-            <HistoryItem />
-            <HistoryItem />
-            <HistoryItem />
-            <HistoryItem />
-            <HistoryItem />
-            <HistoryItem />
+            {
+              history.length === 0 &&
+              <span>Você ainda não alugou nenhum veículo.</span>
+            }
+            {
+              history.map(history => {
+                return <HistoryItem key={history.carroPlaca} cars={cars} history={history} />
+              })
+            }
           </ListContainer>
         </React.Fragment>
       </Body>
@@ -37,4 +43,4 @@ const CLientHistory: React.FC = () => {
   );
 }
 
-export default CLientHistory;
+export default ClientHistory;

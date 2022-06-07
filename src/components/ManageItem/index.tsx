@@ -7,22 +7,27 @@ import {
   Body 
 } from './styles';
 
-const RentModal: React.FC = () => {
-
+const ManageItem: React.FC<ManageItemProps> = ({ car }: ManageItemProps) => {
+  
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  
   const toggle = () => setIsOpen(!isOpen)
 
   return (
     <>
-      <CarItem toggle={toggle} car={{} as ICar} />
+      <CarItem toggle={toggle} car={car} />
       <Modal
         open={isOpen}
         onClose={toggle}
       >
         <Body>
           <h3 className="carTitle">HB20</h3>
-          <p className="client">João Silva</p>
+          {
+            car.status === "DISPONIVEL"?
+            <input className="input m_top" placeholder="CNH do Cliente"/>
+            :
+            <p className="client">João Silva</p>
+          }
           <div className="value">R$500,00</div>
           <hr className="divider" />
           <InputMask 
@@ -35,18 +40,27 @@ const RentModal: React.FC = () => {
             mask="99/99/9999" 
             placeholder="Data de renovação"
           />
-          <div className="buttonContainer">
-            <button className="renovateCartButtom">
-              Renovar
-            </button>
-            <button className="returnCartButtom">
-              Devolver
-            </button>
-          </div>
+          {
+            car.status === "DISPONIVEL" ?
+            <div className="buttonContainer">
+              <button className="renovateCartButtom">
+                Alugar
+              </button>
+            </div>
+            :
+            <div className="buttonContainer">
+              <button className="renovateCartButtom">
+                Renovar
+              </button>
+              <button className="returnCartButtom">
+                Devolver
+              </button>
+            </div>
+          }
         </Body>
       </Modal>
     </>
   );
 }
 
-export default RentModal;
+export default ManageItem;

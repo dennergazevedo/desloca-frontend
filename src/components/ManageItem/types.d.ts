@@ -1,0 +1,3 @@
+interface ManageItemProps{
+  car: ICar
+}

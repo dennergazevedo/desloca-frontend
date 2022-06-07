@@ -27,6 +27,7 @@ export const MenuItem = styled.div<MenuItem>`
   padding: 16px 32px;
   border-bottom: ${props => props.bottom? 'none' : '1px solid #3331'};
   width: 250px;
+  cursor: pointer;
 
   .drawerIcon{
     margin-right: 8px;

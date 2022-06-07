@@ -13,6 +13,10 @@ export const Body = styled.div`
   left: calc(50% - 160px);
   padding: 16px 32px;
 
+  .m_top{
+    margin-top: 16px;
+  }
+
   .carTitle{
     display: flex;
     justify-content: center;

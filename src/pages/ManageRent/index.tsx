@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../context';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ManageItem from '../../components/ManageItem';
@@ -14,6 +15,8 @@ import {
 } from './styles';
 
 const ManageRent: React.FC = () => {
+  const { cars } = useContext(Context);
+
   return (
     <Container>
       <Header />
@@ -33,12 +36,11 @@ const ManageRent: React.FC = () => {
             </div>
           </Title>
           <ListContainer>
-            <ManageItem />
-            <ManageItem />
-            <ManageItem />
-            <ManageItem />
-            <ManageItem />
-            <ManageItem />
+            {
+              cars.map(car => {
+                return <ManageItem key={car.placa} car={car}/>
+              })
+            }
           </ListContainer>
         </React.Fragment>
       </Body>

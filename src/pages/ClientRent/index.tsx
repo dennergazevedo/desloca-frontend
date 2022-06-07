@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import RentModal from '../../components/RentModal';
@@ -10,8 +10,11 @@ import {
   Title, 
   ListContainer 
 } from './styles';
+import { Context } from '../../context';
 
 const ClientRent: React.FC = () => {
+  const {cars} = useContext(Context);
+
   return (
     <Container>
       <Header />
@@ -22,7 +25,11 @@ const ClientRent: React.FC = () => {
             <h1>Escolha o seu veículo</h1>
           </Title>
           <ListContainer>
-            <RentModal car={{} as ICar}/>
+            {
+              cars.map(car => {
+                return <RentModal key={car.placa} car={car}/>
+              })
+            }
           </ListContainer>
         </React.Fragment>
       </Body>

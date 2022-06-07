@@ -3,6 +3,7 @@ interface IContext{
   setUser: React.Dispatch<React.SetStateAction<IUser>>
 	cars: ICar[]
 	update: () => void
+	history: IHistory[]
 }
 
 interface IUser{
@@ -23,4 +24,11 @@ interface ICar{
 	price: number
 	ano: number
 	motor: number
+}
+
+interface IHistory{
+  dataAlocacao: Date
+  dataDevolucao: Date
+  carroPlaca: string
+  clienteCnh: string
 }

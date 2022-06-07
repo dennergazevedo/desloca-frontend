@@ -128,7 +128,7 @@ export const ContactContainer = styled.section`
 
   @media (min-width: 600px){
     min-height: 40vh;
-    height: 40vh;
+    height: 45vh;
     padding: 0px 32px;
     margin-top: 64px;
     overflow: visible;
