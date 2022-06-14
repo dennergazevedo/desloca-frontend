@@ -6,14 +6,21 @@ import {
   DescriptionContainer 
 } from './styles';
 
-const CarItem: React.FC<ICarItem> = ({ toggle, car }: ICarItem) => {
+const CarItem: React.FC<ICarItem> = ({ toggle, car, manage }: ICarItem) => {
 
   const handleIndisponivel = useCallback(() => {
     alert.error('Este carro está indisponível!');
   }, [])
 
   return (
-    <Container onClick={car.status === 'INDISPONIVEL'? handleIndisponivel : toggle} status={car.status}>
+    <Container 
+      onClick={
+        manage ? toggle : 
+          car.status === 'INDISPONIVEL'? handleIndisponivel : 
+            toggle
+      } 
+      status={manage ? "DISPONIVEL" : car.status}
+    >
       <ImageContainer>
         <img src={car.image} alt={car.modelo} />
       </ImageContainer>

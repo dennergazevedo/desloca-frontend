@@ -31,4 +31,5 @@ interface IHistory{
   dataDevolucao: Date
   carroPlaca: string
   clienteCnh: string
+	ativo: boolean
 }

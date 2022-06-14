@@ -15,7 +15,7 @@ import {
 } from './styles';
 
 const ManageRent: React.FC = () => {
-  const { cars } = useContext(Context);
+  const { cars, history } = useContext(Context);
 
   return (
     <Container>
@@ -38,7 +38,7 @@ const ManageRent: React.FC = () => {
           <ListContainer>
             {
               cars.map(car => {
-                return <ManageItem key={car.placa} car={car}/>
+                return car.status !== "DISPONIVEL" && <ManageItem key={car.placa} car={car} history={history}/>
               })
             }
           </ListContainer>
