@@ -18,7 +18,7 @@ const Contato: React.FC = () => {
   async function sendMail(e: any) {
     e.preventDefault();
     try{
-      await emailjs.sendForm('service_hwdj94e', 'template_vde3rly', e.target, 'SDiEIku7bkTR0EwJi')
+      await emailjs.sendForm('service_tiiwxtk', 'template_2rk0q0o', e.target, 'yJiKj8QToUeYwWcle')
       e.target.reset();
       alert.success('Contato enviado com sucesso!');
     }catch(err){
