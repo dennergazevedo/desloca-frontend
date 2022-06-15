@@ -28,7 +28,7 @@ const ManageRent: React.FC = () => {
     const filtered = available.filter((car) => car.placa.indexOf(value) !== -1)
     setRentCars(filtered);
     setSearch(value);
-  }, [cars])
+  }, [cars, setRentCars, setSearch])
 
   return (
     <Container>

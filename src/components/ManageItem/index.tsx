@@ -43,7 +43,7 @@ const ManageItem: React.FC<ManageItemProps> = ({ car, history }: ManageItemProps
     }catch(err){
       console.log("Falha ao localizar cliente!");
     }
-  }, [currentHistory])
+  }, [currentHistory, getUser, setCurrentUser])
 
   const totalDays = useCallback((now: Date, past: Date) => {
     const diff = Math.abs(now.getTime() - past.getTime());
@@ -99,9 +99,10 @@ const ManageItem: React.FC<ManageItemProps> = ({ car, history }: ManageItemProps
 
   const handleRenovate = useCallback(async () => {
     try{
+      const fixDate = newDevolutionDate.toString().split("/").reverse().join("-");
       await api.post('/renovate', {
         id: currentHistory.id,
-        dataDevolucao: new Date(newDevolutionDate.toString().split("/").reverse().join("-")),
+        dataDevolucao: new Date(fixDate),
         ativo: true
       })
       alert.success("Aluguel renovado com sucesso!");
@@ -112,7 +113,7 @@ const ManageItem: React.FC<ManageItemProps> = ({ car, history }: ManageItemProps
     }catch(err){
       alert.error("Falha na renovação, tente novamente!");
     }
-  }, [])
+  }, [newDevolutionDate, currentHistory])
 
   useEffect(() => {
     getCarActiveHistory();
