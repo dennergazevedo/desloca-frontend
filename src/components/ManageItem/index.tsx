@@ -60,6 +60,7 @@ const ManageItem: React.FC<ManageItemProps> = ({ car, history }: ManageItemProps
 
   const dataAlocacao = useMemo(() => {
     const date = new Date(currentHistory.dataAlocacao);
+    console.log("date", date);
     return `${
       ("00" + date.getDate()).slice(-2)
     }/${
@@ -72,7 +73,7 @@ const ManageItem: React.FC<ManageItemProps> = ({ car, history }: ManageItemProps
   const dataDevolucao = useMemo(() => {
     const date = new Date(currentHistory.dataDevolucao);
     return `${
-      ("00" + date.getDate()).slice(-2)
+      ("00" + (date.getDate() + 1)).slice(-2)
     }/${
       ("00" + (date.getMonth() + 1)).slice(-2)
     }/${
@@ -99,7 +100,7 @@ const ManageItem: React.FC<ManageItemProps> = ({ car, history }: ManageItemProps
 
   const handleRenovate = useCallback(async () => {
     try{
-      const fixDate = newDevolutionDate.toString().split("/").reverse().join("-");
+      let fixDate = newDevolutionDate.toString().split("/").reverse().join("-");
       await api.post('/renovate', {
         id: currentHistory.id,
         dataDevolucao: new Date(fixDate),
