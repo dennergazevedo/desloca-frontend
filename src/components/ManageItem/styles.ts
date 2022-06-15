@@ -97,7 +97,7 @@ export const Body = styled.div`
 
     .renovateCartButtom{
       background-color: #00aa2b;
-      margin-right: 8px;
+      margin-right: 16px;
 
       &:hover{
         transition: 0.5s all;
@@ -107,7 +107,6 @@ export const Body = styled.div`
 
     .returnCartButtom{
       background-color: #e54;
-      margin-left: 8px;
 
       &:hover{
         transition: 0.5s all;

@@ -1,6 +1,8 @@
 import React from 'react';
+import { toast as alert } from 'react-toastify';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import * as emailjs from 'emailjs-com';
 
 import { AiOutlinePhone, AiOutlineClockCircle } from 'react-icons/ai';
 import { MdOutlineLocationOn } from 'react-icons/md';
@@ -12,6 +14,18 @@ import {
 } from './styles';
 
 const Contato: React.FC = () => {
+  
+  async function sendMail(e: any) {
+    e.preventDefault();
+    try{
+      await emailjs.sendForm('service_hwdj94e', 'template_vde3rly', e.target, 'SDiEIku7bkTR0EwJi')
+      e.target.reset();
+      alert.success('Contato enviado com sucesso!');
+    }catch(err){
+      alert.error('Falha ao realizar contato!');
+    }
+  }
+
   return (
     <Container>
       <Header />
@@ -60,11 +74,11 @@ const Contato: React.FC = () => {
               </p>
             </div>
           </div>
-          <form className="contactForm">
+          <form className="contactForm" onSubmit={sendMail}>
             <h1 className="title">CONTATE-NOS</h1>
-            <input className="input" placeholder="Digite seu nome"/>
-            <input className="input" placeholder="Digite seu melhor e-mail"/>
-            <textarea className="textarea" placeholder="Escreva sua duvida aqui..."/>
+            <input name="name" className="input" placeholder="Digite seu nome"/>
+            <input name="email" className="input" placeholder="Digite seu melhor e-mail"/>
+            <textarea name="message" className="textarea" placeholder="Escreva sua duvida aqui..."/>
             <button className="sendButton" type="submit">
               Enviar
             </button>

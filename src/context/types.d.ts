@@ -27,6 +27,7 @@ interface ICar{
 }
 
 interface IHistory{
+	id?: string
   dataAlocacao: Date
   dataDevolucao: Date
   carroPlaca: string

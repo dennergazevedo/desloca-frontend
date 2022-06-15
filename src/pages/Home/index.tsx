@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context';
 
@@ -18,8 +18,6 @@ import {
 
 const Home: React.FC = () => {
   const { cars } = useContext(Context);
-  
-  useEffect(() => {console.log(cars)}, [cars])
 
   return (
     <Container>

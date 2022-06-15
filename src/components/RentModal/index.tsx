@@ -43,10 +43,11 @@ const RentModal: React.FC<RentModalProps> = ({ car }: RentModalProps) => {
       const response = await api.post('/alugar', {
         carroPlaca: car.placa,
         clienteCnh: user.cnh,
-        dataAlocacao,
-        dataDevolucao, 
+        dataAlocacao: new Date(dataAlocacao.toString().split("/").reverse().join("-")),
+        dataDevolucao: new Date(dataDevolucao.toString().split("/").reverse().join("-")), 
+        ativo: true
       });
-      if(response.data.id){
+      if(response.data.history.id){
         alert.success('Carro reservado com sucesso!');
         toggle();
         update();
